@@ -1,5 +1,7 @@
 package com.merzmostafaei.train;
 
+import com.merzmostafaei.train.linkedList.LinkedList;
+
 public class Main {
     public static void main(String[] args){
         var numbers = new ArrayTry(3);
@@ -34,5 +36,19 @@ public class Main {
         System.out.println("insertAt");
         numbers.insertAt(15,3);
         numbers.print();
+
+        //LinkedList
+
+        System.out.println("LinkedList");
+        LinkedList list = new LinkedList();
+
+        list.addFirst(10);
+        list.addFirst(5);
+        list.addLast(20);
+        list.printList();
+
+        list.deleteFirst();
+        System.out.println(list.contains(5));
+        System.out.println(list.indexof(10));
     }
 }
