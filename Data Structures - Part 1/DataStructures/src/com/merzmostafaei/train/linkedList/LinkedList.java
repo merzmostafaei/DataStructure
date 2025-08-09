@@ -5,9 +5,9 @@ public class LinkedList {
     private Node last;
 
     private int count;
-    private int[] index;
 
-    public int getCount() {
+
+    public int count() {
         return count;
     }
 
@@ -76,6 +76,18 @@ public class LinkedList {
         }
         return -1;
 
+    }
+
+    public int[] toArray(){
+        int[] array = new int[count];
+        var current = first;
+        var index = 0;
+        while (current != null){
+            array[index++] = current.getValue();
+            current= current.getNext();
+
+        }
+        return array;
     }
 
     public void printList(){

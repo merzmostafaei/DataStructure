@@ -2,6 +2,9 @@ package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.linkedList.LinkedList;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args){
         var numbers = new ArrayTry(3);
@@ -50,5 +53,8 @@ public class Main {
         list.deleteFirst();
         System.out.println(list.contains(5));
         System.out.println(list.indexof(10));
+
+        var array = list.toArray();
+        System.out.println(Arrays.toString(array));
     }
 }
