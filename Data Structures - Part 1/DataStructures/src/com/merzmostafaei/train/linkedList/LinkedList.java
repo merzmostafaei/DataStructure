@@ -90,6 +90,24 @@ public class LinkedList {
         return array;
     }
 
+    public void reverse(){
+        if(first == null) return;
+
+        Node prev = null;
+        Node current = first;
+        Node next = null;
+
+        while (current != null){
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+        last = first;
+        first = prev;
+
+    }
+
     public void printList(){
         Node current = first;
         while (current != null){
