@@ -104,7 +104,9 @@ public class LinkedList {
             current = next;
         }
         last = first;
+        last.setNext(null);
         first = prev;
+
 
     }
 
