@@ -2,8 +2,13 @@ package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.linkedList.LinkedList;
 
-import java.lang.reflect.Array;
+import com.merzmostafaei.train.stack.Expressions;
+import com.merzmostafaei.train.stack.ReversedString;
+
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args){
@@ -73,6 +78,25 @@ public class Main {
 
         System.out.println("hasLoop");
         list.hasLoop();
+
+        // Stack
+        System.out.println("Stack");
+
+        //ReversingStack
+        ReversedString reverser = new ReversedString();
+
+        var local = reverser.ReversedString("abcd");
+        System.out.println(local);
+
+        // BalanceExpressions
+        System.out.println("BalanceExpressions");
+        var balanced = new Expressions();
+        balanced.isBalanced("{");
+
+
+
+
+
 
 
 
