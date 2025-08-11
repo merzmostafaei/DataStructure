@@ -4,11 +4,11 @@ import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
+import com.merzmostafaei.train.stack.Stack;
 
 import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Stack;
 
 public class Main {
     public static void main(String[] args){
@@ -81,6 +81,14 @@ public class Main {
 
         // Stack
         System.out.println("Stack");
+
+        var stack = new Stack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.pop();
+        System.out.println(stack.peek());
+
 
         //ReversingStack
         ReversedString reverser = new ReversedString();
