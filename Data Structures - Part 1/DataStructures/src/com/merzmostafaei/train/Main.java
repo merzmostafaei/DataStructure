@@ -48,6 +48,12 @@ public class Main {
         list.addFirst(10);
         list.addFirst(5);
         list.addLast(20);
+        list.addLast(30);
+        list.addLast(40);
+        list.addLast(50);
+        list.addLast(60);
+
+
         list.printList();
 
         list.deleteFirst();
@@ -55,10 +61,19 @@ public class Main {
         System.out.println(list.indexof(10));
 
         System.out.println("reverse");
-        list.reverse();
+        //list.reverse();
+        var kth = list.getKthFromTheEnd(1);
 
         var array = list.toArray();
         System.out.println(Arrays.toString(array));
+        System.out.println(kth);
+
+        System.out.println("printMiddle");
+        list.printMiddle();
+
+        System.out.println("hasLoop");
+        list.hasLoop();
+
 
 
     }

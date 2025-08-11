@@ -14,7 +14,7 @@ public class LinkedList {
     //addFirst
 
     public void addFirst(int element){
-        Node newNode = new Node(element,first);
+        Node newNode = new Node(element, first);
         first = newNode;
         if(last== null){
             last = first;
@@ -109,6 +109,27 @@ public class LinkedList {
 
 
     }
+    public int getKthFromTheEnd(int k){
+
+        if(first == null )throw  new IllegalStateException();
+        Node firstPoint = first;
+        Node secondPoint = first;
+        if (k <= 0) throw new IllegalArgumentException(" k must be > 0");
+
+        for (int i = 0 ; i< k ; i++){
+            if (firstPoint == null){
+                return 0;
+            }
+             firstPoint = firstPoint.getNext();
+            if (firstPoint == null) throw new IllegalArgumentException();
+
+        }
+        while (firstPoint != null){
+            firstPoint = firstPoint.getNext();
+            secondPoint = secondPoint.getNext();
+        }
+       return secondPoint.getValue();
+    }
 
     public void printList(){
         Node current = first;
@@ -118,4 +139,55 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
+    public void printMiddle() {
+        if (first == null) {
+            throw new IllegalStateException("emptyList");
+        }
+
+        var firstPoint = first;   // slow pointer
+        var secondPoint = first;  // fast pointer
+
+        while (secondPoint != last && secondPoint.getNext() != last) {
+            firstPoint = firstPoint.getNext();
+            secondPoint = secondPoint.getNext().getNext();
+        }
+
+        // If fast pointer (secondPoint) is exactly last node => odd length
+        if (secondPoint == last) {
+            System.out.println(firstPoint.getValue());
+        } else {
+            // even length - print two middle nodes
+            System.out.println(firstPoint.getValue() + "," + firstPoint.getNext().getValue());
+        }
+
+
+
+
+
+
+}
+
+    public void hasLoop() {
+        if (first == null) {
+            throw new IllegalStateException("emptyList");
+        }
+
+        var fast = first;
+        var slow = first;
+        while (fast != null && fast.getNext() != null){
+                slow = slow.getNext();
+                fast = fast.getNext().getNext();
+            if ( slow == fast ) {
+                System.out.println(slow.getValue());
+                return;
+            }
+        }
+
+
+
+
+        System.out.println("withoutCycle");
+    }
+
 }
