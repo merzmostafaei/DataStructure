@@ -5,6 +5,7 @@ import com.merzmostafaei.train.linkedList.LinkedList;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
+import com.merzmostafaei.train.stack.TwoStackOneArray;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -100,6 +101,33 @@ public class Main {
         System.out.println("BalanceExpressions");
         var balanced = new Expressions();
         balanced.isBalanced("{");
+
+        //  Implement two stacks in one array
+
+        var twoStackOneArray = new TwoStackOneArray();
+        twoStackOneArray.push1(10);
+        twoStackOneArray.push1(20);
+        twoStackOneArray.push1(30);
+
+
+
+
+        twoStackOneArray.push2(10);
+        twoStackOneArray.push2(20);
+        twoStackOneArray.push2(30);
+
+        System.out.println(twoStackOneArray);
+
+        twoStackOneArray.pop1();
+        twoStackOneArray.pop2();
+
+        System.out.println(twoStackOneArray.isEmpty1());
+        System.out.println(twoStackOneArray.isFull2());
+        System.out.println(twoStackOneArray);
+
+
+
+
 
 
 
