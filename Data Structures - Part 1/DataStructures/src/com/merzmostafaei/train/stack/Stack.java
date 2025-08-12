@@ -41,6 +41,21 @@ public class Stack {
     public boolean isEmpty(){
         return count == 0;
     }
+    public int min(){
+
+        if(array.length ==0){
+            throw new RuntimeException("Array is Empty");
+        }
+
+        int minvalue = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < minvalue) {
+                minvalue = array[i];
+            }
+        }
+        return minvalue;
+
+    }
     @Override
     public String toString(){
         var content = Arrays.copyOfRange(array,0,count);

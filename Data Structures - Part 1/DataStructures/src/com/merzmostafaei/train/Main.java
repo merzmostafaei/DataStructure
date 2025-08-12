@@ -2,14 +2,18 @@ package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.linkedList.LinkedList;
 
+import com.merzmostafaei.train.queue.ImplementingTheQueue;
+import com.merzmostafaei.train.queue.ReversingAQueue;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
 import com.merzmostafaei.train.stack.TwoStackOneArray;
 
 import java.sql.Array;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args){
@@ -89,6 +93,8 @@ public class Main {
         stack.push(30);
         stack.pop();
         System.out.println(stack.peek());
+        System.out.println(stack.min());
+
 
 
         //ReversingStack
@@ -124,6 +130,37 @@ public class Main {
         System.out.println(twoStackOneArray.isEmpty1());
         System.out.println(twoStackOneArray.isFull2());
         System.out.println(twoStackOneArray);
+
+
+        // Revesing a Queue
+        System.out.println("Revesing a Queue");
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+
+        var reversingAQueue = new ReversingAQueue();
+        String reverse1 = reversingAQueue.reverse1(queue);
+        Queue<Integer> reverse2 = reversingAQueue.reverse2(queue);
+
+        System.out.println("Reversed queue" + reverse1);
+        System.out.println("Reversed queue" + reverse2);
+
+
+        // Implementing the Queue using Array
+        System.out.println("Implementing the Queue using Array");
+
+        var Queue = new ImplementingTheQueue.ArrayQueue(5);
+        Queue.enqueue(10);
+        Queue.enqueue(20);
+        Queue.enqueue(30);
+
+        System.out.println(Queue);
+        System.out.println(Queue.dequeue());
+
+        System.out.println(Queue.peek());
+
+
 
 
 
