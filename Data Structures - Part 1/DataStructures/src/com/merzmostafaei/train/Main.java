@@ -151,14 +151,21 @@ public class Main {
         System.out.println("Implementing the Queue using Array");
 
         var Queue = new ImplementingTheQueue.ArrayQueue(5);
+
         Queue.enqueue(10);
         Queue.enqueue(20);
         Queue.enqueue(30);
+        Queue.enqueue(40);
+        Queue.enqueue(50);
+        Queue.dequeue();
+        Queue.enqueue(60);
+
 
         System.out.println(Queue);
-        System.out.println(Queue.dequeue());
 
         System.out.println(Queue.peek());
+
+
 
 
 
