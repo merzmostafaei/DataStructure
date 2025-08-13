@@ -1,6 +1,7 @@
 package com.merzmostafaei.train.queue;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public  class ImplementingTheQueue {
 
@@ -62,5 +63,43 @@ public  class ImplementingTheQueue {
             }
 
 
+        }
+
+        public static class StackQueue{
+            Stack<Integer> stackLeft = new Stack<>();
+
+            Stack<Integer> stackRight = new Stack<>();
+
+            public void enqueue(int element){
+                if(stackLeft.isEmpty())
+                    stackLeft.push(element);
+
+
+                stackRight.push(stackLeft.pop());
+
+            }
+
+            public void dequeue(){
+                while (!stackRight.isEmpty()){
+                    stackLeft.push(stackRight.pop());
+                }
+                stackLeft.pop();
+                while (!stackLeft.isEmpty()){
+                    stackRight.push(stackLeft.pop());
+                }
+            }
+
+            @Override
+            public String toString() {
+                return "StackQueue{" +
+                        stackRight +
+                        '}';
+            }
+
+
+
+
+
+            
         }
 }

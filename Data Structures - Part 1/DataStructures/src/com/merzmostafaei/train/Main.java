@@ -150,22 +150,41 @@ public class Main {
         // Implementing the Queue using Array
         System.out.println("Implementing the Queue using Array");
 
-        var Queue = new ImplementingTheQueue.ArrayQueue(5);
+        var arrayQueue = new ImplementingTheQueue.ArrayQueue(5);
 
-        Queue.enqueue(10);
-        Queue.enqueue(20);
-        Queue.enqueue(30);
-        Queue.enqueue(40);
-        Queue.enqueue(50);
-        Queue.dequeue();
-        Queue.enqueue(60);
-
-
-        System.out.println(Queue);
-
-        System.out.println(Queue.peek());
+        arrayQueue.enqueue(10);
+        arrayQueue.enqueue(20);
+        arrayQueue.enqueue(30);
+        arrayQueue.enqueue(40);
+        arrayQueue.enqueue(50);
+        arrayQueue.dequeue();
+        arrayQueue.enqueue(60);
 
 
+        System.out.println(arrayQueue);
+
+        System.out.println(arrayQueue.peek());
+
+        // Implementing the StackQueue
+        System.out.println("Implementing the StackQueue");
+
+        var stackQueue =new ImplementingTheQueue.StackQueue();
+
+        stackQueue.enqueue(10);
+        stackQueue.enqueue(20);
+        stackQueue.enqueue(30);
+
+        System.out.println(stackQueue);
+        stackQueue.enqueue(40);
+        System.out.println(stackQueue);
+
+        stackQueue.dequeue();
+        System.out.println(stackQueue);
+
+        stackQueue.enqueue(500);
+        System.out.println(stackQueue);
+        stackQueue.dequeue();
+        System.out.println(stackQueue);
 
 
 
