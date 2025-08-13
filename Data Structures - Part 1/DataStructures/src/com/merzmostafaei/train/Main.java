@@ -185,6 +185,7 @@ public class Main {
         System.out.println(stackQueue);
         stackQueue.dequeue();
         System.out.println(stackQueue);
+        System.out.println(stackQueue.dequeue());
 
 
 
