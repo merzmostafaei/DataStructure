@@ -2,8 +2,7 @@ package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.linkedList.LinkedList;
 
-import com.merzmostafaei.train.queue.ImplementingTheQueue;
-import com.merzmostafaei.train.queue.ReversingAQueue;
+import com.merzmostafaei.train.queue.*;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
@@ -150,7 +149,7 @@ public class Main {
         // Implementing the Queue using Array
         System.out.println("Implementing the Queue using Array");
 
-        var arrayQueue = new ImplementingTheQueue.ArrayQueue(5);
+        var arrayQueue = new ArrayQueue(5);
 
         arrayQueue.enqueue(10);
         arrayQueue.enqueue(20);
@@ -168,7 +167,7 @@ public class Main {
         // Implementing the StackQueue
         System.out.println("Implementing the StackQueue");
 
-        var stackQueue =new ImplementingTheQueue.StackQueue();
+        var stackQueue =new StackQueue();
 
         stackQueue.enqueue(10);
         stackQueue.enqueue(20);
@@ -186,6 +185,61 @@ public class Main {
         stackQueue.dequeue();
         System.out.println(stackQueue);
         System.out.println(stackQueue.dequeue());
+
+        // Implementing PriorityQueue using Array
+        System.out.println("Implementing PriorityQueue using Array");
+
+        var priorityQueue = new PriorityQueue(5);
+
+        priorityQueue.add(5);
+        priorityQueue.add(3);
+        priorityQueue.add(6);
+        priorityQueue.add(1);
+        priorityQueue.add(4);
+
+
+        System.out.println(priorityQueue);
+        while (!priorityQueue.isEmpty())
+            System.out.println(priorityQueue.pull());
+
+        // Implementing Reverse k Element
+        System.out.println("Implementing Reverse k Element");
+
+        Queue<Integer> q = new ArrayDeque<>();
+        q.add(10); q.add(20); q.add(30); q.add(40); q.add(50);
+
+        ReverseKelement r = new ReverseKelement();
+        System.out.println(r.reverser(q, 3));
+
+        // Implementing LinkListQueue
+
+        LinkedListQueue queueLinkeList = new LinkedListQueue();
+
+
+        queueLinkeList.enqueue(10);
+        queueLinkeList.enqueue(20);
+        queueLinkeList.enqueue(30);
+
+        System.out.println(queueLinkeList.size());
+        System.out.println(queueLinkeList.peek());
+
+
+        queueLinkeList.dequeue();
+        queueLinkeList.dequeue();
+        System.out.println(queueLinkeList.size());
+
+        // Implementing StackWithTwoQueues
+        System.out.println("Implementing StackWithTwoQueues");
+        StackWithTwoQueues stackWithTwoQueues = new StackWithTwoQueues();
+        stackWithTwoQueues.push(10);
+        stackWithTwoQueues.push(20);
+        stackWithTwoQueues.push(30);
+        System.out.println(stackWithTwoQueues.peek());
+        System.out.println(stackWithTwoQueues.pop());
+        System.out.println(stackWithTwoQueues);
+        System.out.println(stackWithTwoQueues.size());
+
+
 
 
 
