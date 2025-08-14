@@ -11,33 +11,35 @@ public class StackWithTwoQueues {
 
     public void push(int elemet){
         queueLeft.add(elemet);
-        while (!queueRight.isEmpty()){
+        if (!queueRight.isEmpty()){
             queueLeft.add(queueRight.remove());
         }
-        Queue<Integer> temprary = queueRight;
+        Queue<Integer> temporaryQueue = queueRight;
         queueRight = queueLeft;
-        queueLeft = temprary;
+        queueLeft = temporaryQueue;
+
+
     }
     public int pop(){
-        if (queueRight.isEmpty()) throw new IllegalStateException("Stack is empty");
+        if(queueRight.isEmpty())
+            throw new IllegalArgumentException();
+
 
         return queueRight.remove();
     }
     public int peek(){
-        if (queueRight.isEmpty()) throw new IllegalStateException("Stack is empty");
+        if(queueRight.isEmpty())
+            throw new IllegalArgumentException();
         return queueRight.peek();
     }
     public int size(){
         return queueRight.size();
     }
-    public boolean isEmpty(){
-        return queueRight.isEmpty();
-    }
+
 
     @Override
     public String toString() {
-        return "StackWithTwoQueues{" + queueRight +
-                '}';
+        return "StackWithTwoQueue " + queueRight;
     }
 
 }
