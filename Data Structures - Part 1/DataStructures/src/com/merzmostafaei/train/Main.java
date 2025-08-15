@@ -1,5 +1,8 @@
 package com.merzmostafaei.train;
 
+import com.merzmostafaei.train.hashTable.FirstRepeatedCharacter;
+import com.merzmostafaei.train.hashTable.HashTableChainingArray;
+import com.merzmostafaei.train.hashTable.NonRepeationCharacter;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -8,9 +11,7 @@ import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
 import com.merzmostafaei.train.stack.TwoStackOneArray;
 
-import java.sql.Array;
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Queue;
 
@@ -239,6 +240,24 @@ public class Main {
         System.out.println(stackWithTwoQueues);
         System.out.println(stackWithTwoQueues.size());
 
+
+        // HashTables
+        System.out.println("HashTables");
+        NonRepeationCharacter f = new NonRepeationCharacter();
+        f.getSting("HashTables");   // expected: H (or if you want to ignore case/space, see next example)
+
+        FirstRepeatedCharacter f2 = new FirstRepeatedCharacter();
+        var ch = f2.getString("HashTables");
+        System.out.println(ch);
+
+        System.out.println(" HashTableChaningArray ");
+        var ht = new HashTableChainingArray();
+//        ht.put(new HashTableChainingArray.Entity(1,"hello"));
+//        ht.put(new HashTableChainingArray.Entity(2,"Hello"));
+//        ht.put(new HashTableChainingArray.Entity(3,"HEllo"));
+
+        ht.get(2);
+        ht.remove(1);
 
 
 
