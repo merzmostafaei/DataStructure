@@ -252,12 +252,16 @@ public class Main {
 
         System.out.println(" HashTableChaningArray ");
         var ht = new HashTableChainingArray();
-//        ht.put(new HashTableChainingArray.Entity(1,"hello"));
-//        ht.put(new HashTableChainingArray.Entity(2,"Hello"));
-//        ht.put(new HashTableChainingArray.Entity(3,"HEllo"));
+        ht.put(1,"hello");
+        ht.put(2,"Hello");
+        ht.put(3,"HEllo");
+        ht.put(2,"HeLLLo");
 
-        ht.get(2);
-        ht.remove(1);
+
+        System.out.println(ht.get(2));
+        ht.remove(3);
+        System.out.println(ht);
+
 
 
 
