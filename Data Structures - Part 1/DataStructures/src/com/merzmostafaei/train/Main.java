@@ -1,8 +1,6 @@
 package com.merzmostafaei.train;
 
-import com.merzmostafaei.train.hashTable.FirstRepeatedCharacter;
-import com.merzmostafaei.train.hashTable.HashTableChainingArray;
-import com.merzmostafaei.train.hashTable.NonRepeationCharacter;
+import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -261,6 +259,19 @@ public class Main {
         System.out.println(ht.get(2));
         ht.remove(3);
         System.out.println(ht);
+
+        // MostFrequentElement
+        System.out.println("MostFrequentElement");
+        var mostFrequentElement=new MostFrequentElement();
+
+        var result = mostFrequentElement.mostFrequent(new int[]{1,2,2,3,3,3,4});
+        System.out.println(result);
+
+
+
+
+
+
 
 
 
