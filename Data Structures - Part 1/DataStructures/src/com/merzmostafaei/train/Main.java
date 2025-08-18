@@ -267,7 +267,11 @@ public class Main {
         var result = mostFrequentElement.mostFrequent(new int[]{1,2,2,3,3,3,4});
         System.out.println(result);
 
-
+        // CountPairsWithDiffrentK
+        System.out.println("CountPairsWithDiffrentK");
+        var countPairsWithDiffrentK= new CountPairsWithDiffrentK();
+        var result2 = countPairsWithDiffrentK.countPairsWithDiff(new int[]{1,7,5,9,2,12,3}, 2);
+        System.out.println(result2);
 
 
 
