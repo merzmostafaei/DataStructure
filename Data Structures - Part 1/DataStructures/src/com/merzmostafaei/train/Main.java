@@ -277,7 +277,19 @@ public class Main {
         System.out.println("twoSumOneTarget");
         var  twoSumOneTarget = new twoSumOneTarget();
         twoSumOneTarget.TwoSum(new int[]{2,7,11,15},9);
-        
+
+
+        //HashMapLinearProbingStrategy
+        System.out.println("HashMapLinearProbingStrategy");
+        var hashMapLinearProbingStrategy=new HashMapLinearProbingStrategy();
+        hashMapLinearProbingStrategy.put(1,"A");
+        hashMapLinearProbingStrategy.put(10,"B");
+        hashMapLinearProbingStrategy.put(15,"D");
+        hashMapLinearProbingStrategy.put(16,"C");
+        System.out.println(hashMapLinearProbingStrategy.get(1));
+        System.out.println(hashMapLinearProbingStrategy.size());
+        hashMapLinearProbingStrategy.remove(10);
+        System.out.println(hashMapLinearProbingStrategy.size());
 
 
 
