@@ -276,8 +276,8 @@ public class Main {
         //twoSumOneTarget
         System.out.println("twoSumOneTarget");
         var  twoSumOneTarget = new twoSumOneTarget();
-        var resut3= twoSumOneTarget.TwoSum(new int[]{2,7,11,15},9);
-        System.out.println(resut3);
+        twoSumOneTarget.TwoSum(new int[]{2,7,11,15},9);
+        
 
 
 
