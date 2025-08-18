@@ -273,6 +273,14 @@ public class Main {
         var result2 = countPairsWithDiffrentK.countPairsWithDiff(new int[]{1,7,5,9,2,12,3}, 2);
         System.out.println(result2);
 
+        //twoSumOneTarget
+        System.out.println("twoSumOneTarget");
+        var  twoSumOneTarget = new twoSumOneTarget();
+        var resut3= twoSumOneTarget.TwoSum(new int[]{2,7,11,15},9);
+        System.out.println(resut3);
+
+
+
 
 
 
