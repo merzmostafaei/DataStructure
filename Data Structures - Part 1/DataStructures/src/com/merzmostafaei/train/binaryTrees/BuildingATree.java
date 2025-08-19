@@ -1,6 +1,6 @@
 package com.merzmostafaei.train.binaryTrees;
 
-import com.sun.source.tree.Tree;
+import java.util.ArrayList;
 
 public class BuildingATree {
     public class Node{
@@ -156,6 +156,34 @@ public class BuildingATree {
         if (root1 == null && root2 == null) return true;
         if(root1 == null || root2 == null) return false;
         return root1.value == root2.value && isEqual(root1.leftChild,root2.leftChild) && isEqual(root1.rightChild,root2.rightChild);
+    }
+
+    private boolean isBinarySearchTree(Node node, int min, int max){
+        if(node == null)return true;
+        if(node.value < min || node.value > max) return false;
+
+        return isBinarySearchTree(node.leftChild,min,node.value -1) && isBinarySearchTree(node.rightChild,node.value+1,max);
+
+    }
+    public boolean isBinarySearchTree(){
+        return isBinarySearchTree(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+
+    public ArrayList<Integer> getNodesAtDistance(int distance){
+        var list = new ArrayList<Integer>();
+        getNodesAtDistance(root,distance,list);
+        return list;
+    }
+
+    private void getNodesAtDistance(Node root, int distance, ArrayList<Integer> list){
+       if(root == null)return;
+
+       if(distance == 0){
+           list.add(root.value);
+           return;
+       }
+       getNodesAtDistance(root.leftChild,distance-1,list);
+       getNodesAtDistance(root.rightChild,distance-1,list);
     }
 
 

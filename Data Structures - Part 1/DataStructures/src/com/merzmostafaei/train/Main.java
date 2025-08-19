@@ -345,8 +345,12 @@ public class Main {
 
 
         // Validating Binary Search Trees -> mean the Tree is binarySearchTree or not.
+        System.out.println("isBinarySearchTree");
+        System.out.println(buildingATree.isBinarySearchTree());
 
-
+        // Node in K distance
+        System.out.println("Node in K distance");
+        System.out.println( buildingATree.getNodesAtDistance(1));
 
 
 
