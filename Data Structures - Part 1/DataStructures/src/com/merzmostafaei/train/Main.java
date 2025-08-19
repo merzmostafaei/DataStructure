@@ -1,5 +1,6 @@
 package com.merzmostafaei.train;
 
+import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
@@ -290,6 +291,20 @@ public class Main {
         System.out.println(hashMapLinearProbingStrategy.size());
         hashMapLinearProbingStrategy.remove(10);
         System.out.println(hashMapLinearProbingStrategy.size());
+
+
+        // Building A Tree
+        System.out.println("Building A Tree");
+
+        BuildingATree buildingATree = new BuildingATree();
+        buildingATree.insert(7);
+        buildingATree.insert(4);
+        buildingATree.insert(9);
+        buildingATree.insert(1);
+        buildingATree.insert(6);
+        buildingATree.insert(8);
+        buildingATree.insert(10);
+        System.out.println(buildingATree.find(10));
 
 
 
