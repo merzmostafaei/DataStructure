@@ -106,13 +106,56 @@ public class BuildingATree {
     private int hight(Node root){
         if (root == null) return -1;
 
-        if(root.leftChild == null && root.rightChild == null)
+        if(isLeaf(root))
             return 0;
 
         return 1 + Math.max(hight(root.leftChild),hight(root.rightChild));
     }
     public int hight(){
         return hight(root);
+    }
+    private boolean isLeaf(Node root){
+        return root.leftChild == null && root.rightChild == null;
+    }
+
+    private int min(Node root){
+        if (isLeaf(root)) return root.value;
+
+        var left = min(root.leftChild);
+        var right = min(root.rightChild);
+        return Math.min(Math.min(left,right),root.value);
+    }
+
+    public int min() {
+        return min(root);
+    }
+
+    private int minSearchBinaryTree(Node root){
+        if(root==null) throw new IllegalStateException();
+
+        var current = root;
+        var last = current;
+        while (current != null){
+            last = current;
+            current = current.leftChild;
+        }
+        return last.value;
+    }
+
+    public int minSearchBinaryTree(){
+        return minSearchBinaryTree(root);
+    }
+
+    public boolean isEqual (BuildingATree other){
+        if (other == null) return false;
+
+        return isEqual(root,other.root);
+    }
+
+    private boolean isEqual(Node root1, Node root2){
+        if (root1 == null && root2 == null) return true;
+        if(root1 == null || root2 == null) return false;
+        return root1.value == root2.value && isEqual(root1.leftChild,root2.leftChild) && isEqual(root1.rightChild,root2.rightChild);
     }
 
 

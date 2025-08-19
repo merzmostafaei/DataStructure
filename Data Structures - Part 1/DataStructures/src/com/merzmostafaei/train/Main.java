@@ -319,6 +319,34 @@ public class Main {
         System.out.println("hight-root");
         System.out.println(buildingATree.hight());
 
+        // for BinaryTree
+        // min-root    O(n)
+        System.out.println("min-root");
+        System.out.println(buildingATree.min());
+
+        // for BinareySearchTree
+        // minSearchBinaryTree  O(Log n)
+        System.out.println("minSearchBinaryTree");
+        buildingATree.minSearchBinaryTree();
+
+
+        // is-Equal
+        System.out.println("isEqual");
+        BuildingATree buildingATree2 = new BuildingATree();
+        buildingATree2.insert(7);
+        buildingATree2.insert(4);
+        buildingATree2.insert(9);
+        buildingATree2.insert(1);
+        buildingATree2.insert(6);
+        buildingATree2.insert(8);
+
+
+        System.out.println(buildingATree.isEqual(buildingATree2));
+
+
+        // Validating Binary Search Trees -> mean the Tree is binarySearchTree or not.
+
+
 
 
 
