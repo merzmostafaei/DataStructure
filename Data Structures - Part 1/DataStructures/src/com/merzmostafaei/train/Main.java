@@ -315,6 +315,10 @@ public class Main {
         System.out.println("traversePosOrder");
         buildingATree.traversePosOrder();
 
+        // hight-root
+        System.out.println("hight-root");
+        System.out.println(buildingATree.hight());
+
 
 
 
