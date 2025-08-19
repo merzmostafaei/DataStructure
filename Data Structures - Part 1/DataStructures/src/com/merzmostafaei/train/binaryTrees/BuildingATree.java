@@ -71,5 +71,38 @@ public class BuildingATree {
         return false;
     }
 
+    private void traversePreOrder(Node root){
+        if(root == null) return;
+
+        System.out.println(root.value);
+        traversePreOrder(root.leftChild);
+        traversePreOrder(root.rightChild);
+    }
+    public void traversePreOrder(){
+        traversePreOrder(root);
+    }
+    private void traverseInOrder(Node root){
+        if(root == null) return;
+
+        traverseInOrder(root.leftChild);
+        System.out.println(root.value);
+        traverseInOrder(root.rightChild);
+    }
+    public void traverseInOrder(){
+        traverseInOrder(root);
+    }
+
+    private void traversePosOrder(Node root){
+        if(root == null) return;
+
+        traversePosOrder(root.leftChild);
+        traversePosOrder(root.rightChild);
+        System.out.println(root.value);
+    }
+    public void traversePosOrder(){
+        traversePosOrder(root);
+    }
+
+
 
 }

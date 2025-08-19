@@ -307,6 +307,15 @@ public class Main {
         System.out.println(buildingATree.find(10));
 
 
+        // Traversal - PreOrder
+        System.out.println("Traversal-PreOrder");
+        buildingATree.traversePreOrder();
+        System.out.println("traverseInOrder");
+        buildingATree.traverseInOrder();
+        System.out.println("traversePosOrder");
+        buildingATree.traversePosOrder();
+
+
 
 
 
