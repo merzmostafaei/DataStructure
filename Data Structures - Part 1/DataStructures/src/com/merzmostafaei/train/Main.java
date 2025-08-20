@@ -352,6 +352,17 @@ public class Main {
         System.out.println("Node in K distance");
         System.out.println( buildingATree.getNodesAtDistance(1));
 
+        // TraveseLevelOrder
+        System.out.println("TraveseLevelOrder");
+        buildingATree.traverseLevelOrder();
+
+        // Tree.size
+        System.out.println("TreeSize");
+        System.out.println(buildingATree.size());
+
+        // Count - leaves -> node with no children
+
+        System.out.println();
 
 
 

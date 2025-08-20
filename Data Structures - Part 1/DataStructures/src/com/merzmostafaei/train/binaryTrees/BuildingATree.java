@@ -114,6 +114,7 @@ public class BuildingATree {
     public int hight(){
         return hight(root);
     }
+
     private boolean isLeaf(Node root){
         return root.leftChild == null && root.rightChild == null;
     }
@@ -186,6 +187,44 @@ public class BuildingATree {
        getNodesAtDistance(root.rightChild,distance-1,list);
     }
 
+    public void traverseLevelOrder(){
+        for (var i = 0; i<= hight(); i++){
+            var list = getNodesAtDistance(i);
+            for( var value: list) System.out.println(value);
+        }
+    }
+
+    private int size(Node node){
+        if (node == null){
+            return 0;
+        }
+        if (isLeaf(node))
+            return 1;
+
+        return 1 + size(node.rightChild) + size(node.leftChild);
+
+
+    }
+    public int size(){
+        return size(root);
+    }
+
+    private ArrayList<Node> countLeaves(Node node){
+        var list = new ArrayList<Node>();
+
+        if(isLeaf(node)){
+            list.add(node);
+            return list;
+        }else{
+            list.addAll(countLeaves(node.leftChild));
+            list.addAll(countLeaves(node.rightChild));
+        }
+        return list;
+    }
+
+    public ArrayList<Node> countLeaves(){
+        return countLeaves(root);
+    }
 
 
 }
