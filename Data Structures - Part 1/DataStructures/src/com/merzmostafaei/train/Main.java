@@ -12,6 +12,7 @@ import com.merzmostafaei.train.stack.TwoStackOneArray;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Queue;
 
 public class Main {
@@ -362,7 +363,30 @@ public class Main {
 
         // Count - leaves -> node with no children
 
-        System.out.println();
+        System.out.println("Count - leaves");
+        System.out.println(buildingATree.countLeaves());
+        System.out.println(buildingATree.countLeaves().size());
+
+        // Contains value use Recursion - in find() we used iteration method.
+        System.out.println("Contains value use Recursion");
+        System.out.println(buildingATree.contains(7));
+
+        // Tree,Max
+        System.out.println("Tree,Max");
+        System.out.println(buildingATree.max());
+
+        // find Node
+        System.out.println("find Node");
+        System.out.println(buildingATree.findNode(4));
+
+        // areSibling
+        System.out.println("areSibling");
+        System.out.println(buildingATree.areSibling(4,9));
+
+        // getAncestors
+        System.out.println("getAncestors");
+        System.out.println(buildingATree.getAncestors(1));
+
 
 
 

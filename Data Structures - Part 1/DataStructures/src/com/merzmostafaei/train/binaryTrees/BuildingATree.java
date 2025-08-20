@@ -1,9 +1,11 @@
 package com.merzmostafaei.train.binaryTrees;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class BuildingATree {
-    public class Node{
+    public class Node {
 
         int value;
         Node leftChild;
@@ -167,16 +169,16 @@ public class BuildingATree {
 
     }
     public boolean isBinarySearchTree(){
-        return isBinarySearchTree(root,Integer.MIN_VALUE,Integer.MAX_VALUE);
+        return isBinarySearchTree(root, java.lang.Integer.MIN_VALUE, java.lang.Integer.MAX_VALUE);
     }
 
-    public ArrayList<Integer> getNodesAtDistance(int distance){
-        var list = new ArrayList<Integer>();
+    public ArrayList<java.lang.Integer> getNodesAtDistance(int distance){
+        var list = new ArrayList<java.lang.Integer>();
         getNodesAtDistance(root,distance,list);
         return list;
     }
 
-    private void getNodesAtDistance(Node root, int distance, ArrayList<Integer> list){
+    private void getNodesAtDistance(Node root, int distance, ArrayList<java.lang.Integer> list){
        if(root == null)return;
 
        if(distance == 0){
@@ -209,22 +211,102 @@ public class BuildingATree {
         return size(root);
     }
 
-    private ArrayList<Node> countLeaves(Node node){
-        var list = new ArrayList<Node>();
+    private ArrayList<Integer> countLeaves(Node node){
+        var list = new ArrayList<Integer>();
+        if (node == null)return list;
 
         if(isLeaf(node)){
-            list.add(node);
-            return list;
+            list.add(node.value);
+
         }else{
             list.addAll(countLeaves(node.leftChild));
             list.addAll(countLeaves(node.rightChild));
         }
-        return list;
+
+            return list;
     }
 
-    public ArrayList<Node> countLeaves(){
+    public ArrayList<Integer> countLeaves(){
         return countLeaves(root);
     }
 
+    private boolean contains(Node node, int value){
+        if (node == null)return false;
+        if(node.value == value)return true;
+
+        return contains(node.leftChild,value) || contains(node.rightChild,value);
+    }
+
+    public boolean contains(int value){
+        return contains(root,value);
+    }
+
+    private int max(Node node){
+        if(isLeaf(node))return node.value;
+        var left = max(node.leftChild);
+        var right= max(node.rightChild);
+
+        return Math.max(Math.max(left,right),node.value);
+
+    }
+
+    public int max(){
+        return max(root);
+    }
+
+    private boolean areSibling(Node root,Node node1, Node node2){
+       if(root == null)return false;
+
+       if (root.leftChild == node1 && root.rightChild == node2) return true;
+       if(root.rightChild == node1 && root.leftChild == node2) return true;
+
+       return areSibling(root.leftChild,node1,node2) || areSibling(root.rightChild,node1,node2);
+    }
+
+    public boolean areSibling(int value1, int value2){
+        Node node1 = findNode(value1);
+        Node node2 = findNode(value2);
+        if (node1 == null || node2 == null)return false;
+
+        return areSibling(root,node1,node2);
+    }
+
+    private Node findNode(Node root,int value){
+        if(root == null)return null;
+        if(root.value == value) return root;
+
+        var left = findNode(root.leftChild,value);
+        if (left != null) return left;
+
+        return findNode(root.rightChild,value);
+
+    }
+    public Node findNode(int value){
+        return findNode(root,value);
+    }
+
+    private boolean getAncestors(Node root, int value, List<Integer> ancestors){
+        if (root == null)return false;
+
+        if (root.value == value)return true;
+
+        if(getAncestors(root.leftChild,value,ancestors) || getAncestors(root.rightChild,value,ancestors)){
+            ancestors.add(root.value);
+            return true;
+        }
+
+        return false;
+
+
+
+
+
+    }
+
+    public List<Integer> getAncestors(int value){
+        var ancestores = new ArrayList<Integer>();
+        getAncestors(root,value,ancestores);
+        return ancestores;
+    }
 
 }
