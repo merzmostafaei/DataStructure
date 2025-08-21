@@ -1,5 +1,6 @@
 package com.merzmostafaei.train;
 
+import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.linkedList.LinkedList;
@@ -387,7 +388,15 @@ public class Main {
         System.out.println("getAncestors");
         System.out.println(buildingATree.getAncestors(1));
 
+        // AVL Tree
+        System.out.println("AVL Tree");
+        var avlTree = new BuildingAvlTree();
+        avlTree.insert(10);
+        avlTree.insert(20);
+        avlTree.insert(30);
+        System.out.println("done");
 
+        
 
 
 
