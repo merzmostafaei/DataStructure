@@ -4,14 +4,14 @@ public class BuildingAvlTree {
     public class AvlNode {
 
         int value;
-        int height;
 
+        int height;
         AvlNode leftAvlNode;
+
         AvlNode rightAvlNode;
         public AvlNode(int value) {
             this.value = value;
         }
-
         public int getValue() {
             return value;
         }
@@ -26,8 +26,8 @@ public class BuildingAvlTree {
                     '}';
         }
 
-    }
 
+    }
     private AvlNode root;
 
     private AvlNode insert(AvlNode avlNode, int value){
@@ -77,6 +77,7 @@ public class BuildingAvlTree {
         return balanceFactor(node) > 1;
 
     }
+
     private boolean isRightHeavy(AvlNode node){
         return balanceFactor(node) < -1;
 
@@ -110,7 +111,6 @@ public class BuildingAvlTree {
         System.out.println("leftRotate at " + node.value + " -> new root " + newNode.value);System.out.println("leftRotate " + node.value);
         return newNode;
     }
-
     private void setHeight(AvlNode node){
         node.height = Math.max(
                 height(node.leftAvlNode)
@@ -131,6 +131,30 @@ public class BuildingAvlTree {
         return node != null && node.leftAvlNode == null && node.rightAvlNode == null;
     }
 
+    public boolean isBalanced() {
+        return isBalanced(root);
+    }
+
+    private boolean isBalanced(AvlNode node) {
+        if (node == null) return true;
+
+        if (Math.abs(height(node.leftAvlNode) - height(node.rightAvlNode)) > 1) return false;
+        return isBalanced(node.leftAvlNode) && isBalanced(node.rightAvlNode);
+    }
+
+    private boolean isPerfect(AvlNode node){
+        if (node == null) return true;
+        if (node.leftAvlNode == null && node.rightAvlNode == null) return true;
+        if ((node.leftAvlNode == null) ^ (node.rightAvlNode == null)) return false;
+        if(height(node.leftAvlNode) != height(node.rightAvlNode))return false;
+
+
+        return isPerfect(node.leftAvlNode) && isPerfect(node.rightAvlNode);
+    }
+
+    public boolean isPerfect(){
+        return isPerfect(root);
+    }
 
 
 }

@@ -396,6 +396,17 @@ public class Main {
         avlTree.insert(30);
         System.out.println("done");
 
+
+        // binary Tree is Balanced
+        System.out.println("binary Tree is Balanced");
+        System.out.println(avlTree.isBalanced());
+
+        // perfect Tree
+        System.out.println(avlTree.isPerfect());
+
+
+
+
         
 
 
