@@ -3,6 +3,7 @@ package com.merzmostafaei.train;
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
+import com.merzmostafaei.train.heap.buildingAheap;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -403,6 +404,17 @@ public class Main {
 
         // perfect Tree
         System.out.println(avlTree.isPerfect());
+
+
+        // Heap
+        var heap = new buildingAheap();
+        heap.insert(10);
+        heap.insert(5);
+        heap.insert(17);
+        heap.insert(4);
+        heap.insert(22);
+
+        System.out.println(heap);
 
 
 
