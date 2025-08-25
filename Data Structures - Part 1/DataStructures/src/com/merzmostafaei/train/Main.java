@@ -3,7 +3,7 @@ package com.merzmostafaei.train;
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
-import com.merzmostafaei.train.heap.buildingAheap;
+import com.merzmostafaei.train.heap.Heap;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -14,7 +14,6 @@ import com.merzmostafaei.train.stack.TwoStackOneArray;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Queue;
 
 public class Main {
@@ -407,7 +406,7 @@ public class Main {
 
 
         // Heap
-        var heap = new buildingAheap();
+        var heap = new Heap();
         heap.insert(10);
         heap.insert(5);
         heap.insert(17);
@@ -419,7 +418,7 @@ public class Main {
         // Sorting Heap
         System.out.println("Sorting Heap");
         int [] Numbers = {5,3,10,1,4,2};
-        var heap2 = new buildingAheap();
+        var heap2 = new Heap();
         for (var number : Numbers){
             heap2.insert(number);
         }

@@ -2,7 +2,7 @@ package com.merzmostafaei.train.heap;
 
 import java.util.Arrays;
 
-public class buildingAheap {
+public class Heap {
 
     int[] array = new int[10];
     int size = 0;
