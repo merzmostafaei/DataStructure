@@ -416,6 +416,18 @@ public class Main {
         System.out.println(heap.remove());
         System.out.println(heap);
 
+        // Sorting Heap
+        System.out.println("Sorting Heap");
+        int [] Numbers = {5,3,10,1,4,2};
+        var heap2 = new buildingAheap();
+        for (var number : Numbers){
+            heap2.insert(number);
+        }
+        for (int i = Numbers.length-1 ; i>=0 ; i--){
+            Numbers[i] = heap2.remove();
+        }
+        System.out.println(Arrays.toString(Numbers));
+
 
 
 

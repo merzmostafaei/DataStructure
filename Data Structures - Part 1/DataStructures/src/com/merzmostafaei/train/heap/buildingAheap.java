@@ -5,122 +5,77 @@ import java.util.Arrays;
 public class buildingAheap {
 
     int[] array = new int[10];
-
     int size = 0;
 
     public void insert(int node) {
-        if (isFull())
-            throw new IllegalStateException();
-
-        array[size] = node;
-        size++;
+        if (isFull()) throw new IllegalStateException(); // or grow()
+        array[size++] = node;
         bubbleUp();
-
-
     }
 
-    private void bubbleUp(){
-        var index = size -1;;
-
-        while (index > 0 && array[index] > array[parent(index)]){
-            swap(index,parent(index));
+    private void bubbleUp() {
+        int index = size - 1;
+        while (index > 0 && array[index] > array[parent(index)]) {
+            swap(index, parent(index));
             index = parent(index);
         }
-
     }
 
-    private int parent(int index){
-        return (index-1) / 2;
+    private int parent(int index) { return (index - 1) / 2; }
+
+    private void swap(int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 
+    private boolean isFull() { return size == array.length; }
+    public boolean isEmpty() { return size == 0; }
 
-    private void swap(int first, int second){
-        var tmp = array[first];
-        array[first] = array[second];
-        array[second] = tmp;
-    }
-
-
-    private boolean isFull() {
-        return size == array.length;
-    }
-
-    public int remove(){
-        if (isEmpty())throw new IllegalStateException();
-
-        var root = array[0];
+    public int remove() {
+        if (isEmpty()) throw new IllegalStateException();
+        int root = array[0];
         array[0] = array[--size];
         bubbleDown();
         return root;
     }
 
     private void bubbleDown() {
-        var index = 0;
-
-        while (index <= size && !isValidParent(index)){
-
-            var LargChildIndex = largerChildIndex(index);
-            swap(index,lefChildIndex(index));
-            index = LargChildIndex;
+        int index = 0;
+        while (hasLeftChild(index) && !isValidParent(index)) {
+            int largerChild = largerChildIndex(index);
+            swap(index, largerChild);
+            index = largerChild;
         }
     }
 
-    private boolean isValidParent(int index){
-        if (!hasLeftChild(index))
-            return true;
-
-        var isValid = array[index] > leftChild(index);
-
+    private boolean isValidParent(int index) {
+        if (!hasLeftChild(index)) return true;                // leaf
+        boolean valid = array[index] >= leftChild(index);
         if (hasRightChild(index))
-            isValid &= array[index] > rightChild(index);
-
-        return isValid;
-    }
-    private int largerChildIndex(int index){
-        if (hasLeftChild(index))return index;
-        if(hasRightChild(index))return lefChildIndex(index);
-
-        return (leftChild(index) > rightChild(index) ? lefChildIndex(index) : rightChildIndex(index));
-
+            valid &= array[index] >= rightChild(index);
+        return valid;
     }
 
-    public boolean isEmpty(){
-        return size == 0;
+    private int largerChildIndex(int index) {
+        if (!hasLeftChild(index)) return index;               // no children
+        if (!hasRightChild(index)) return leftChildIndex(index);
+        return leftChild(index) >= rightChild(index)
+                ? leftChildIndex(index)
+                : rightChildIndex(index);
     }
 
-    private int rightChild(int index){
-        return array[rightChildIndex(index)];
-    }
+    private int leftChild(int index)  { return array[leftChildIndex(index)]; }
+    private int rightChild(int index) { return array[rightChildIndex(index)]; }
 
-    private int leftChild(int index) {
-        return array[lefChildIndex(index)];
-    }
+    private int leftChildIndex(int index)  { return 2 * index + 1; }
+    private int rightChildIndex(int index) { return 2 * index + 2; }
 
-    private int lefChildIndex(int index){
-        return 2 * index + 1;
-    }
-    private int rightChildIndex(int index){
-        return 2 * index + 2;
-    }
-
-    private boolean hasLeftChild(int index){
-        return lefChildIndex(index) <= size;
-    }
-
-    private boolean hasRightChild(int index){
-        return rightChildIndex(index) <= size;
-    }
-
-
+    private boolean hasLeftChild(int index)  { return leftChildIndex(index)  < size; }
+    private boolean hasRightChild(int index) { return rightChildIndex(index) < size; }
 
     @Override
     public String toString() {
-        return "buildingAheap{" +
-                "array=" + Arrays.toString(array) +
-                '}';
+        return "buildingAheap{array=" + Arrays.toString(Arrays.copyOf(array, size)) + '}';
     }
-
-
 }
-
-
