@@ -4,6 +4,7 @@ import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.heap.Heap;
+import com.merzmostafaei.train.heap.MaxHeap;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -426,6 +427,12 @@ public class Main {
             Numbers[i] = heap2.remove();
         }
         System.out.println(Arrays.toString(Numbers));
+
+        // heapify
+        System.out.println("heapify");
+        int[] numbers3 = {5,3,8,4,1,2};
+        MaxHeap.heapfy(numbers3);
+        System.out.println(Arrays.toString(numbers3));
 
 
 
