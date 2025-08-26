@@ -5,6 +5,7 @@ import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.heap.Heap;
 import com.merzmostafaei.train.heap.MaxHeap;
+import com.merzmostafaei.train.heap.MinHeap;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -434,6 +435,26 @@ public class Main {
         MaxHeap.heapfy(numbers3);
         System.out.println(Arrays.toString(numbers3));
 
+        // Kth Largest Item
+        System.out.println("Kth Largest Item");
+        int [] numbers4 = {5,3,8,4,1,2};
+        System.out.println(MaxHeap.KthLargest(numbers4,1));
+
+        //isMaxHeap
+        System.out.println("isMaxHeap");
+        var heap3 = new Heap();
+        System.out.println(heap3.isMaxheap(numbers4));
+
+        // Implement MinHeap with array of node, each node has key value field
+        System.out.println("Implement MinHeap");
+        var minheap = new MinHeap();
+        minheap.insert(7,"h");
+        minheap.insert(3,"e");
+        minheap.insert(8,"l");
+        minheap.insert(9,"l");
+        minheap.insert(2,"o");
+        minheap.insert(1,"o");
+        System.out.println(minheap);
 
 
 

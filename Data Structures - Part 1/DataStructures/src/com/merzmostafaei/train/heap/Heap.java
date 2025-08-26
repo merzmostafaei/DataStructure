@@ -65,6 +65,29 @@ public class Heap {
                 : rightChildIndex(index);
     }
 
+    public int max(){
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        return array[0];
+    }
+
+    public boolean isMaxheap(int[] array){
+        var lastParent = (array.length / 2) -1;
+        for( int i = 0; i <= lastParent; i++){
+            var left = 2 * i + 1;
+            if(left < array.length && array[i] < array[left])return false;
+
+            var right = 2 * i + 2;
+            if(right < array.length && array[i] < array[right]) return false;
+
+        }
+
+
+        return true;
+    }
+
+
     private int leftChild(int index)  { return array[leftChildIndex(index)]; }
     private int rightChild(int index) { return array[rightChildIndex(index)]; }
 
