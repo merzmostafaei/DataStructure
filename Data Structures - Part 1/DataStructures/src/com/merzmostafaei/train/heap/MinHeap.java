@@ -41,7 +41,7 @@ public class MinHeap {
 
     }
 
-    private String remove(){
+    public String remove(){
         if(isEmpty())throw new IllegalStateException();
 
         String root = nodes[0].value;
@@ -110,7 +110,7 @@ public class MinHeap {
         return size == nodes.length;
     }
 
-    private boolean isEmpty(){
+    public boolean isEmpty(){
         return size == 0;
     }
 

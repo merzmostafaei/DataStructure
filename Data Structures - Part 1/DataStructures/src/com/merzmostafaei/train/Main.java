@@ -1,11 +1,13 @@
 package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
+import com.merzmostafaei.train.Tries.TrieArray;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.heap.Heap;
 import com.merzmostafaei.train.heap.MaxHeap;
 import com.merzmostafaei.train.heap.MinHeap;
+import com.merzmostafaei.train.heap.MinPriorityQueue;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
@@ -455,6 +457,27 @@ public class Main {
         minheap.insert(2,"o");
         minheap.insert(1,"o");
         System.out.println(minheap);
+
+        // MinPriorityQueue
+        System.out.println("MinPriorityQueue");
+        var minPriorityQueue = new MinPriorityQueue();
+        minPriorityQueue.insert("h",5);
+        minPriorityQueue.insert("h",3);
+        minPriorityQueue.insert("h",8);
+        minPriorityQueue.insert("h",2);
+        System.out.println(minPriorityQueue);
+
+        // Building a Trie with Array
+        System.out.println("Trie with Array");
+        var trie = new TrieArray();
+        trie.insert("cat");
+        trie.insert("can");
+        System.out.println("Done");
+
+        // Building a Trie with HashMap
+        System.out.println("Trie with HashMap");
+
+
 
 
 
