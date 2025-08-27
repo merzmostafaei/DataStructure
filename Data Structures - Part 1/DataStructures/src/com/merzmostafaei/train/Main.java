@@ -2,6 +2,7 @@ package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.Tries.TrieArray;
+import com.merzmostafaei.train.Tries.TrieHashMap;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.heap.Heap;
@@ -476,6 +477,34 @@ public class Main {
 
         // Building a Trie with HashMap
         System.out.println("Trie with HashMap");
+        var trie2 = new TrieHashMap();
+        trie2.insert("cat");
+        trie2.insert("canada");
+        System.out.println("Done");
+        System.out.println(trie2.contains("cat"));
+        trie2.travversal();
+        System.out.println("remove");
+        trie2.remove("cat");
+        System.out.println(trie2.contains("cat"));
+
+        // autoCompletion
+        System.out.println("autoCompletion");
+        trie2.insert("canien");
+        trie2.insert("cabin");
+        trie2.insert("canon");
+        System.out.println(trie2.autoCompletion("c"));
+
+        // Contain method Recursive
+        System.out.println("Contain method Recursive");
+        System.out.println(trie2.containsRecursive("canon"));
+
+        //Count Number of Word
+        System.out.println("Count Number of Word");
+        System.out.println(trie2.countWords());
+
+        // LongestCommonPrefix
+        System.out.println("LongestCommonPrefix");
+        System.out.println(trie2.longestCommonPrefix("car","care"));
 
 
 
