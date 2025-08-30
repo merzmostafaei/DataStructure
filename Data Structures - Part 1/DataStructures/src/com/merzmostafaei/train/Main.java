@@ -1,6 +1,7 @@
 package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
+import com.merzmostafaei.train.Tries.Graph;
 import com.merzmostafaei.train.Tries.TrieArray;
 import com.merzmostafaei.train.Tries.TrieHashMap;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
@@ -505,6 +506,47 @@ public class Main {
         // LongestCommonPrefix
         System.out.println("LongestCommonPrefix");
         System.out.println(trie2.longestCommonPrefix("car","care"));
+
+        // Graph Implementation
+        System.out.println("Graph Implementation");
+        var graph = new Graph();
+
+        graph.addNode("A");
+        graph.addNode("B");
+        graph.addNode("C");
+        graph.addNode("D");
+
+        graph.addEdge("A","B");
+        graph.addEdge("A","C");
+        graph.addEdge("B","C");
+        graph.addEdge("B","D");
+        graph.addEdge("C","A");
+        graph.print();
+        //graph.removeEdge("A","C");
+        graph.print();
+
+        //TravessalDepth
+        System.out.println("TravessalDepth");
+        graph.traverseDepthFirst("A");
+
+        // TraversalIterativeDepthFirst
+        System.out.println("TraversalIterative");
+        graph.trversalIterativeDepthFirst("A");
+
+        // TraversalIterativeBreadthFirst
+        System.out.println("traversalIterativeBreadthFirst");
+        graph.traversalIterativeBreadthFirst("A");
+
+        // TopologicalSorting
+        System.out.println("TopologicalSorting");
+        var List = graph.TopologicalSorting("A");
+        System.out.println(List);
+
+        // hasCycle
+        System.out.println("hasCycle");
+        System.out.println(graph.hasCycle());
+
+
 
 
 
