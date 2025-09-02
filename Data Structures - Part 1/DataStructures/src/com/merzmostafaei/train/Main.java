@@ -15,6 +15,8 @@ import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
 import com.merzmostafaei.train.sort.BubbleSort;
+import com.merzmostafaei.train.sort.InsertionSort;
+import com.merzmostafaei.train.sort.SelectionSort;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
@@ -581,6 +583,14 @@ public class Main {
         System.out.println("BubbleSort");
         var bubbleSort = new BubbleSort();
         bubbleSort.sort(new int[]{5,2,10,22,19,11,3});
+
+        // SelectionSort
+        System.out.println("SelectionSort");
+        var selectionSort = new SelectionSort();
+        selectionSort.sort(new int[]{5,2,10,22,19,11,3});
+
+
+
 
 
 
