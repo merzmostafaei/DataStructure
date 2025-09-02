@@ -9,20 +9,29 @@ public class BubbleSort {
 
     public void sort(int[] arrayList){
         var length = arrayList.length;
+        boolean isSorted;
 
-        for(int time= 0 ; time < length - 1; time++){
-                for(int swap = 0; swap < length - time -1; swap++){
-                    if(arrayList[swap] > arrayList[swap +  1]){
+        for(int time= 0 ; time < length ; time++){
+            isSorted = true;
+                for(int swap = 1; swap < length - time ; swap++){
+                    if(arrayList[swap] < arrayList[swap -  1]){
                         System.out.println("   -> Swap needed!");
-                        var temp = arrayList[swap];
-                        arrayList[swap] = arrayList[swap + 1];
-                        arrayList[swap + 1] = temp;
+                        swapper(arrayList, swap);
+                        isSorted = false;
                     }else {
                         System.out.println("   -> No swap.");
                     }
+                    if (isSorted)
+                        System.out.println("Sorted" + Arrays.toString(arrayList));
                 }
 
+
         }
-        System.out.println("Sorted" + Arrays.toString(arrayList));
+    }
+
+    private static void swapper(int[] arrayList, int swap) {
+        var temp = arrayList[swap];
+        arrayList[swap] = arrayList[swap - 1];
+        arrayList[swap - 1] = temp;
     }
 }

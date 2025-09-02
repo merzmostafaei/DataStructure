@@ -577,6 +577,10 @@ public class Main {
         var tree = weightGraph.getMinimumSpaningTree();
         tree.printGraph();
 
+        // BubbleSort
+        System.out.println("BubbleSort");
+        var bubbleSort = new BubbleSort();
+        bubbleSort.sort(new int[]{5,2,10,22,19,11,3});
 
 
 
@@ -584,7 +588,9 @@ public class Main {
 
 
 
-        
+
+
+
 
 
 
