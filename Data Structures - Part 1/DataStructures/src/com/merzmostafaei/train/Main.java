@@ -4,6 +4,7 @@ import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
 import com.merzmostafaei.train.Tries.Graph;
 import com.merzmostafaei.train.Tries.TrieArray;
 import com.merzmostafaei.train.Tries.TrieHashMap;
+import com.merzmostafaei.train.Tries.unDirectedGraph.WeightedGraph;
 import com.merzmostafaei.train.binaryTrees.BuildingATree;
 import com.merzmostafaei.train.hashTable.*;
 import com.merzmostafaei.train.heap.Heap;
@@ -13,6 +14,7 @@ import com.merzmostafaei.train.heap.MinPriorityQueue;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
+import com.merzmostafaei.train.sort.BubbleSort;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
@@ -545,6 +547,36 @@ public class Main {
         // hasCycle
         System.out.println("hasCycle");
         System.out.println(graph.hasCycle());
+
+        // weightGraph
+        var weightGraph = new WeightedGraph();
+        weightGraph.addNode("A");
+        weightGraph.addNode("B");
+        weightGraph.addNode("C");
+        weightGraph.addNode("D");
+
+        weightGraph.addEdge("A","B",2);
+        weightGraph.addEdge("A","C",3);
+        weightGraph.addEdge("C","B",4);
+        weightGraph.addEdge("B","D",5);
+
+        weightGraph.printGraph();
+
+        // Dijkstra's shortest Path
+        System.out.println(" Dijkstra's shortest Path");
+        var path = weightGraph.getShortesPath("A","C");
+        System.out.println(path);
+
+        // hasCycle in WeighteGraph
+        System.out.println("hasCycleWeighteGraph");
+        System.out.println(weightGraph.hasCycle());
+
+        // SpanningTree
+        // Prim's algorithm
+        System.out.println("SpanningTree , Prim's algorithm");
+        var tree = weightGraph.getMinimumSpaningTree();
+        tree.printGraph();
+
 
 
 
