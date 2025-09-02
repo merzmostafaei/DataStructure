@@ -589,7 +589,10 @@ public class Main {
         var selectionSort = new SelectionSort();
         selectionSort.sort(new int[]{5,2,10,22,19,11,3});
 
-
+        // InsertionSort
+        System.out.println("InsertionSort");
+        var insertionSort = new InsertionSort();
+        insertionSort.sort(new int[]{5,2,10,22,19,11,3});
 
 
 
