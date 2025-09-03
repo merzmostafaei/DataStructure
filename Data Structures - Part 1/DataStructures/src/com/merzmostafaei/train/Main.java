@@ -613,6 +613,16 @@ public class Main {
         count.sort(numCount,9);
         System.out.println(Arrays.toString(numCount));
 
+        // BucketSort
+        System.out.println("BucketSort");
+        int[] numBucket = {7,5,1,9,3,5,6};
+        var bucket = new BucketSort();
+        bucket.sort(numBucket,4);
+        System.out.println(Arrays.toString(numBucket));
+
+
+
+
 
 
 
