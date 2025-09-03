@@ -14,10 +14,7 @@ import com.merzmostafaei.train.heap.MinPriorityQueue;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
-import com.merzmostafaei.train.sort.BubbleSort;
-import com.merzmostafaei.train.sort.InsertionSort;
-import com.merzmostafaei.train.sort.MergeSort;
-import com.merzmostafaei.train.sort.SelectionSort;
+import com.merzmostafaei.train.sort.*;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
 import com.merzmostafaei.train.stack.Stack;
@@ -601,6 +598,13 @@ public class Main {
         var merge = new MergeSort();
         merge.sort(num);
         System.out.println(Arrays.toString(num));
+
+        // QuickSort
+        System.out.println("QuickSort");
+        int[] numQuick = {7,5,1,9,3,5,6};
+        var quickSort = new QuickSort();
+        quickSort.sort(numQuick);
+        System.out.println(Arrays.toString(numQuick));
 
 
 
