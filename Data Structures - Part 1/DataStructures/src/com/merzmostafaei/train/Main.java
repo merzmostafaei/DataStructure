@@ -606,9 +606,12 @@ public class Main {
         quickSort.sort(numQuick);
         System.out.println(Arrays.toString(numQuick));
 
-
-
-
+        // CountingSort
+        System.out.println("CountingSort");
+        int[] numCount = {7,5,1,9,3,5,6};
+        var count = new CountingSort();
+        count.sort(numCount,9);
+        System.out.println(Arrays.toString(numCount));
 
 
 
