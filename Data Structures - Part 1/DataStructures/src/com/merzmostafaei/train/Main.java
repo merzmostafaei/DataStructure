@@ -14,6 +14,7 @@ import com.merzmostafaei.train.heap.MinPriorityQueue;
 import com.merzmostafaei.train.linkedList.LinkedList;
 
 import com.merzmostafaei.train.queue.*;
+import com.merzmostafaei.train.search.Search;
 import com.merzmostafaei.train.sort.*;
 import com.merzmostafaei.train.stack.Expressions;
 import com.merzmostafaei.train.stack.ReversedString;
@@ -619,6 +620,30 @@ public class Main {
         var bucket = new BucketSort();
         bucket.sort(numBucket,4);
         System.out.println(Arrays.toString(numBucket));
+
+        // LinearSearch
+        System.out.println("LinearSearch");
+        System.out.println(Search.LinearSearch(numBucket, 9));
+
+        // BinarySearch
+          //work for sorting List
+        System.out.println("LinearSearch");
+        int[] BinaryNum = {1, 3, 5, 5, 6, 7, 9};
+        System.out.println("searchIterative");
+        var searchIterative = Search.BinarySearchIterative(BinaryNum , 3);
+        System.out.println(searchIterative);
+
+        System.out.println("searchRecursive");
+        var searchRecursive = Search.BinarySearchrecursion(BinaryNum,5);
+        System.out.println(searchRecursive);
+
+        // TernarySearch
+        System.out.println("TernarySearch");
+        var ternarySearch =  Search.Ternarysearch(BinaryNum,1);
+        System.out.println(ternarySearch);
+
+
+
 
 
 
