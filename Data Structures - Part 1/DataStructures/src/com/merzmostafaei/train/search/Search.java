@@ -64,6 +64,7 @@ public class Search {
         if (array[mid1] == target)return mid1;
         if(array[mid2] == target) return  mid2;
 
+
         if (target < array[mid1]) {
             return Ternarysearch(array, start, mid1 - 1, target);
         } else if (target > array[mid2]) {
