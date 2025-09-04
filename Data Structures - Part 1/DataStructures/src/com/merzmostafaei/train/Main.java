@@ -1,6 +1,7 @@
 package com.merzmostafaei.train;
 
 import com.merzmostafaei.train.AvlTree.BuildingAvlTree;
+import com.merzmostafaei.train.StringManipulation.StringManipulation;
 import com.merzmostafaei.train.Tries.Graph;
 import com.merzmostafaei.train.Tries.TrieArray;
 import com.merzmostafaei.train.Tries.TrieHashMap;
@@ -643,8 +644,32 @@ public class Main {
         System.out.println(ternarySearch);
 
 
+        // JumpSearch
+        System.out.println("JumpSearch");
+        var jumpSearch = Search.jumpSearch(BinaryNum, 6);
+        System.out.println(jumpSearch);
 
+        // ExponentialSearch
+        System.out.println("ExponentialSearch");
+        var exponentialSearch = Search.exponentialSearch(BinaryNum,6);
+        System.out.println(exponentialSearch);
 
+        // String Manipulation
+        System.out.println(" *** String Manipulation ***");
+        // 1- Find the number of vowels in a string. Vowels in English are A, E, O, U and I Input: “hello” Output: 2
+        System.out.println("findNumberOfVowelsInAString");
+        var findNumberOfVowelsInAString  = StringManipulation.FindTheNumberOfVowels("HEello");
+        System.out.println(findNumberOfVowelsInAString);
+
+        // 2- Reverse a string.  Input: “hello”  Output: “olleh”
+        System.out.println("ReverseAString");
+        var stringReverseAString = StringManipulation.ReverseAString("Hello");
+        System.out.println(stringReverseAString);
+
+        // 3- Reverse the order of words in a sentence.  Input: “Trees are beautiful”  Output: “beautiful are Trees”
+        System.out.println("ReverseTheOrderOfWords");
+        var reverseTheOrderOfWords =StringManipulation.ReverseTheOrderOfWords("Trees are beautiful");
+        System.out.println(reverseTheOrderOfWords);
 
 
 

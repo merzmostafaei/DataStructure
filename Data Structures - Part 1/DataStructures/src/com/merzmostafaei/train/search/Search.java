@@ -77,4 +77,50 @@ public class Search {
         }
 
     }
+    public static int jumpSearch(int[] array, int target){
+        int jump = jumpSearch(array,0,array.length,target);
+        for(int i = 0 ; i < jump ; i++){
+            if (array[i] == target)
+                return i;
+        }
+        return -1;
+    }
+    private static int jumpSearch(int[] array,int start, int end,int target){
+
+        int block= (int)Math.sqrt(array.length);
+        int next = block;
+
+
+        while (start < array.length && array[next-1] < target){
+
+                start = next;
+                next += block;
+                if (next > array.length)
+                    next = array.length;
+            }
+        return next;
+
+    }
+    public static int exponentialSearch(int[] array, int target) {
+        int boundIndex = findExponentialBound(array, 1, target);
+
+        // Linear search in the found block
+        for (int i = boundIndex / 2; i <= Math.min(array.length, boundIndex); i++) {
+            if (array[i] == target) return i;
+        }
+
+        return -1;
+    }
+
+    // Recursive helper to find exponential bound
+    private static int findExponentialBound(int[] array, int nextBound, int target) {
+        if (nextBound >= array.length) return array.length;
+        if (array[nextBound] >= target) return nextBound;
+        return findExponentialBound(array, nextBound * 2, target);
+    }
+
+
+
+
+
 }
