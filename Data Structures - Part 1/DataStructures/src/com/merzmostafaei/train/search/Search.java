@@ -56,11 +56,14 @@ public class Search {
         return Ternarysearch(array,0,array.length-1 ,target);
     }
     private static int Ternarysearch(int[] array, int start, int end, int target){
+        // base Condition
+        if (start >= end) return -1;
+
         int partition = (end - start) /3 ;
         int mid1 = start +  partition;
         int mid2 =  end - partition ;
 
-        if (start >= end) return -1;
+
         if (array[mid1] == target)return mid1;
         if(array[mid2] == target) return  mid2;
 
