@@ -671,17 +671,34 @@ public class Main {
         var reverseTheOrderOfWords =StringManipulation.ReverseTheOrderOfWords("Trees are beautiful");
         System.out.println(reverseTheOrderOfWords);
 
+        // 4- Check if a string is a rotation of another string.Input: “ABCD”, “DABC” (rotate one char to the right)  Output: true Input: “ABCD”, “CDAB” (rotate two chars to the right)Output: true Input: “ABCD”, “ADBC”  Output: false
+        System.out.println("stringIsARotation");
+        System.out.println(StringManipulation.stringIsARotation("ABCD","CDAB"));
 
 
+        // 5- Remove duplicate characters in a string.  Input: “Hellooo!!” Output: “Helo!”
+        System.out.println("removeDuplicateCharacters");
+        var removeDuplicateCharacters = StringManipulation.RemoveDuplicateCharacters("banana");
+        System.out.println(removeDuplicateCharacters);
 
+        // 6- Find the most repeated character in a string.  Input: “Hellooo!! ”Output: ‘o’
+        System.out.println("FindTheMostRepeatedCharacter");
+        var  findTheMostRepeatedCharacter = StringManipulation.FindTheMostRepeatedCharacter("ddaaash");
+        System.out.println(findTheMostRepeatedCharacter);
 
+        // 7- Capitalize the first letter of each word in a sentence. Also, remove any extra spaces between words.  Input: “trees are beautiful ”Output: “Trees Are Beautiful”  Input: “  trees    are        beautiful  ”Output: “Trees Are Beautiful”
+        System.out.println("CapitalizeTheFirstLetterInASentence");
+        var capitalizeTheFirstLetterInASentence = StringManipulation.CapitalizeTheFirstLetterInASentence("trees    are        beautiful");
+        System.out.println(capitalizeTheFirstLetterInASentence);
 
+        // 8- Detect if two strings are anagram of each other. A string is an anagram of another string if it has the exact same characters in any order. Input: “abcd”, “adbc” Output: trueInput: “abcd”, “cadb” Input: trueInput: “abcd”, “abcd” Output: trueInput: “abcd”, “abce” Output: false
+        System.out.println("DetectIfTwoStringsAreAnagram");
+        var detectIfTwoStringsAreAnagram =StringManipulation.DetectIfTwoStringsAreAnagram("abcd","bcda");
+        System.out.println(detectIfTwoStringsAreAnagram);
 
-
-
-
-
-
+        // 9- Check if a string is palindrome. If we read a palindrome string from left or right, we get the exact same characters.  Input: “abba” Output: true Input: “abcba”  Output: trueInput: “abca  ”Output: false
+        System.out.println("StringIsPalindrome");
+        System.out.println(StringManipulation.StringIsPalindrome("racecar"));
 
 
 
